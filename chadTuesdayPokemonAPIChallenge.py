@@ -71,7 +71,7 @@ def main():
     print("\n\n\n")
 
     # Part 3 : Print the name of all the related Pokemon Moves
-    print("<<< Going Through Part 2 >>>")
+    print("<<< Going Through Part 3  >>>")
     obtain_pokemon_info(pokemonName,3)
     print("\n\n\n")
 
