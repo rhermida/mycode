@@ -1,0 +1,33 @@
+---
+- name: A few basic filters
+  hosts: localhost
+  gather_facts: no
+
+  vars:
+    jarlist: [1,1,12,14,18,5]
+    repeatlist: [1,2,2,2,4,4,4,4,9,9,9,9]
+    repeat2list: [5,5,5,5,5,6,7]
+    complexlist: [6,7,8,[9,10,22],87]
+    cityList: ['San Jose','New York','Plano']
+
+  tasks:
+  # Select the Odd Numbers
+  - name: The select filter
+    debug:
+      msg: "Show me the odd numbers in the list: '{{ jarlist|select('odd') }}' "
+        
+  # Roll the Dice for me
+  - name: The Random Filter
+    debug:
+      msg: "Rolling the Dice: '{{ range(1,6)|random }}' "
+        
+  # Roll the Dice for me
+  - name: The Random Filter
+    debug:
+      msg: "Rolling the Dice: '{{ range(1,6)|random }}' "
+
+  # Sort it
+  - name: The Sort Filter
+    debug:
+      msg: "Sort them Cities: '{{ cityList|sort }}' "
+
