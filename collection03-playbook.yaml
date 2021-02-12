@@ -1,0 +1,17 @@
+- name: Using collection components
+
+  hosts: all
+  tasks:
+    # use role1 from adalovelace.myfirstcollection
+    - import_role:
+        name: adalovelace.myfirstcollection.role1
+
+    # use a custom module "mymodule" located in namespace buzzaldrin within the collection apollo
+    - name: Use the custom "mymodule"
+      buzzaldrin.apollo.mymodule:
+        option1: value
+
+    - name: Use custom lookup and filter plugins from the collection
+      debug:
+        msg: '{{ lookup("adalovelace.myfirstcollection.lookup1", 'param1')| adalovelace.myfirstcollection.filter1 }}'
+

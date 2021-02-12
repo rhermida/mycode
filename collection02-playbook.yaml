@@ -1,0 +1,7 @@
+- name: Use collection components without using the keyword "collection"
+  hosts: all
+
+  tasks:
+    - my_namespace.my_collection.mymodule:
+        option1: value
+
